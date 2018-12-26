@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/cards.css">
+	<link rel="icon" href="http://samskarinternationalschool.com/web/aaarummy/img/WhatsApp%20Image%202018-08-31%20at%2011.29.08%20AM.jpeg">
+	<link href="https://fonts.googleapis.com/css?family=Bungee|Open+Sans|Roboto" rel="stylesheet">
+  <title>AAARummy</title>
+</head><body>
+	<div class="success-pop-up success-pop-up--vanila visibility-none slide-out-up"></div>
+	<div class="error-pop-up error-pop-up--vanila visibility-none slide-out-up"></div>
+	<div class="connect connect--vanila">
+		<div class="connect-current-name connect-current-name--vanila"></div>
+    <div class="connect-nickname connect-nickname--vanila">
+			<input type="text" placeholder="Enter your nick name" maxlength="32" />
+			<button>choose</button>
+		</div>
+		<button class="connect-begin-button connect-begin-button--vanila">join a game</button>
+	</div>
+	<div class="toss toss--vanila visibility-none display-none">
+		<div class="toss-label">Toss results:</div>
+		<div class="toss-your-card"></div>
+		<div class="toss-other-cards"></div>
+	</div>
+	<div class="chat chat--vanila">
+		<div class="chat-label chat-label--vanila">chat</div>
+		<div class="chat-textarea chat-textarea--vanila">
+		</div>
+		<div class="chat-input-area chat-input-area--vanila">
+			<input type="text" placeholder="Enter message" maxlength="144" />
+			<button>send</button>
+		</div>
+	</div>
+	<button class="pending-button pending-button--vanila visibility-none slide-out-bottom">start a game</button>
+	<div class="game-buttons visibility-none slide-out-bottom">
+		<button class="game-buttons-drop game-buttons--vanila" tabIndex="-1">drop</button>
+		<button class="game-buttons-discard game-buttons--vanila game-buttons--disabled" tabIndex="-1">discard</button>
+		<button class="game-buttons-show game-buttons--vanila game-buttons--disabled" tabIndex="-1">declare</button>
+		<button class="game-buttons-sort game-buttons--vanila" tabIndex="-1">sort</button>
+	</div>
+	<div class="deck-container deck-container--vanila">
+		<div class="deck"></div>
+		<div class="pile"></div>
+	</div>
+	<div class="show-declared"></div>
+	<div class="card-container visibility-none display-none"></div>
+	<div id="west" class="player-container"></div>
+	<div id="north-west" class="player-container"></div>
+	<div id="north" class="player-container"></div>
+	<div id="north-east" class="player-container"></div>
+	<div id="east" class="player-container"></div>
+	<div class="global-timer visibility-none slide-out-up"></div>
+	<div class="global-scores visibility-none slide-out-up">Score: 0</div>
+	<div class="popup-show-container visibility-none display-none"></div>
+  <script src="/socket.io/socket.io.js"></script>
+	<script src="js/main.js"></script>
+</body></html>
