@@ -12,8 +12,7 @@ var userSchema = new mongoose.Schema({
         default: ''
     },
     contact: {
-        type: Array,
-        default: []
+        type: String
     },
     password: {
         type: String

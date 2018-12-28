@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>College Scale</title>
+    <title>AAARummy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css" />
@@ -15,40 +15,7 @@
 </head>
 
 <body>
-    <div class="uk-position-relative">
-        <div class="uk-position-top">
-            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-                <div class="uk-navbar-left">
-                    <a class="uk-navbar-item uk-logo" href="#">NAAC App</a>
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="#">Home</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li>
-                            <a href="#">About</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li class="uk-active uk-link-text"><a href="#">Software</a></li>
-                                    <li class="uk-link-text"><a href="#">Features</a></li>
-                                    <li class="uk-nav-header uk-link-text">Use Cases</li>
-                                    <li class="uk-link-text"><a href="#">Faculty Management</a></li>
-                                    <li class="uk-link-text"><a href="#">Course Management</a></li>
-                                    <li class="uk-link-text"><a href="#">Students Management</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="uk-navbar-right">
-                    <ul class="uk-navbar-nav">
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/signup">Sign Up</a></li>
-                    </ul>
-
-                </div>
-            </nav>
-        </div>
-    </div>
 
     <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
         <div class="uk-width-1-1">
@@ -71,30 +38,23 @@
                                         Google Plus
                                     </button></a>
 <br>
-                                    <a href="/auth/facebook"><button class="fluid ui facebook button">
-                                        <i class="facebook icon"></i>
-                                        Facebook
-                                    </button></a>
-<br>
-                                    <a href="/auth/linkedin"><button class="fluid ui linkedin button">
-                                        <i class="linkedin icon"></i>
-                                        LinkedIn
-                                    </button></a>
+                                   
                             </p>
                             <hr class="uk-divider-icon">
                             <form method="POST" action="/signup">
-                                <div class="uk-margin">
-                                    <div class="uk-inline uk-width-1-1">
-                                        <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                        <input name="name" class="uk-input uk-form-large" type="text" placeholder="Enter your full name">
-                                    </div>
-                                </div>
+                                
                                 <div class="uk-margin">
                                     <div class="uk-inline uk-width-1-1">
                                         <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                                        <input name="username" class="uk-input uk-form-large" type="email" placeholder="Enter your email" required>
+                                        <input name="username" class="uk-input uk-form-large" type="text" placeholder="Enter your username" required>
                                     </div>
                                 </div>
+                                <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: phone"></span>
+                                            <input name="contact" class="uk-input uk-form-large" type="number" placeholder="Enter your Contact" required>
+                                        </div>
+                                    </div>
                                 <div class="uk-margin">
                                     <div class="uk-inline uk-width-1-1">
                                         <span class="uk-form-icon" uk-icon="icon: lock"></span>

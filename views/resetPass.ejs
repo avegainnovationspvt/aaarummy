@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AAARummy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script>
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/util.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" href="#offcanvas-usage" uk-toggle>
+                <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+            </a>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-iconnav">
+                <li style="padding-right: 10px;"><a href="/logout" uk-icon="icon: sign-out">Logout </a></li>
+            </ul>
+        </div>
+    </nav>
+    <form method="POST" action="/reset" class="uk-form-stacked">
+        <fieldset class="uk-fieldset">
+    
+            <legend class="uk-legend">Legend</legend>
+    
+            <div class="uk-margin uk-width-1-2@s">
+                    <label class="uk-form-label" for="form-stacked-text">Text</label>
+                <input class="uk-input" type="text" name="password" placeholder="Enter new Password">
+            </div>
+
+            <div class="uk-margin uk-width-1-2@s">
+                    <label class="uk-form-label" for="form-stacked-text">Text</label>
+                <input class="uk-input" type="text" name="confirmPass" placeholder="Confirm Password">
+            </div>
+            </fieldset>
+            </form>
+
+   
+    <div class="uk-section uk-section-secondary uk-padding-medium">
+        <div class="uk-container">
+
+            <h3>AAARummy</h3>
+            <br>
+            <div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
+                
+                <div style="text-align: right;">
+                    <p>Powered by <a style="color:#654321;"
+                            target="_blank">AAARummy</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dropDownSelect1"></div>
+    <!--===============================================================================================-->
+    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/bootstrap/js/popper.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/daterangepicker/moment.min.js"></script>
+    <script src="/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="/javascripts/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+</body>
+
+</html>

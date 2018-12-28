@@ -4,6 +4,7 @@
   "description": "Avega Rummy",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "mocha --exit",
     "lint": "eslint *.js",
     "dist-lint": "eslint dist/js/*.js",
@@ -19,6 +20,7 @@
   "author": "Avega",
   "license": "MIT",
   "dependencies": {
+    "async": "^2.6.1",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -26,6 +28,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "mongoose": "^5.4.0",
+    "nodemon": "^1.18.9",
     "passport-google-oauth20": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
     "socket.io": "^2.0.4"
