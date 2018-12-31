@@ -140,8 +140,8 @@ app.get('/auth/google', passport.authenticate('google',{
   ]
 }));
 
-app.get("/", auth.isLoggedIn, function (req, res) {
-    res.render("index", { username : req.user.username});
+app.get("/",  function (req, res) {
+    res.render("index", { username : 'dd'});
   });
 
   
@@ -157,7 +157,7 @@ app.get("/signup", function (req, res) {
 
 app.post("/signup", async (req, res) => {
 
-  const user = await User.findOne({ username : req.body.username });
+  const user = await User.findOne({ username : 'req.body.username' });
   if (user) {
     req.flash('error', 'Email is already in use.');
     res.redirect('/signup');
