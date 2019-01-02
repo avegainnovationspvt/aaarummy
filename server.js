@@ -3,9 +3,6 @@ const app = express();
 const server = require('http').createServer(app);
 const gameConfig = require('./config/game-config.js');
 const port = require('./config/port.js');
-
-var usersRouter = require('./routes/users');
-
 const io = require('socket.io')(server, {
   pingInterval: 15000,
   pingTimeout: 30000
@@ -19,9 +16,6 @@ io.on('connect', (socket) => {
 
 app.disable('x-powered-by');
 app.use(express.static('dist'));
-
-app.use('/users', usersRouter);
-
 // 404 handling.
 app.use((req, res) => {
   res.status(404);
