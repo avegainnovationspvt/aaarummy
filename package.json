@@ -4,7 +4,7 @@
   "description": "Avega Rummy",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node shell.js",
     "test": "mocha --exit",
     "lint": "eslint *.js",
     "dist-lint": "eslint dist/js/*.js",
@@ -31,6 +31,7 @@
     "nodemon": "^1.18.9",
     "passport-google-oauth20": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
+    "shelljs": "^0.8.3",
     "socket.io": "^2.0.4"
   },
   "devDependencies": {

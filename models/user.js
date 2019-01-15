@@ -13,7 +13,7 @@ var userSchema = new mongoose.Schema({
     },
     wallet : {
         type: Number,
-        default: 0
+        default: 100
     },
     contact: {
         type: String
