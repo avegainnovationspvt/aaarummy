@@ -15,75 +15,89 @@
 </head>
 
 <body>
-   
-    <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
-        <div class="uk-width-1-1">
-            <div class="uk-container">
-                <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
-                    <div class="uk-width-1-1@m">
-                        <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
-                            <h3 class="uk-card-title uk-text-center">Welcome back!</h3>
-                            <br>
-                            <% if (error && error.length > 0) { %>
-                            <div class="uk-alert-danger" uk-alert>
-                                <a class="uk-alert-close" uk-close></a>
-                                <p>
-                                    <%= error %>
-                                </p>
-                            </div>
-                            <% } %>
-                            <% if (errorlogin && errorlogin.length > 0) { %>
-                                <div class="uk-alert-danger" uk-alert>
-                                    <a class="uk-alert-close" uk-close></a>
-                                    <p>
-                                        <%= errorlogin %>
-                                    </p>
-                                </div>
-                                <% } %>
 
-                            <p uk-margin>
-                                <!--<button class="uk-button uk-button-secondary uk-button-small uk-width-1-1" >Large button</button>-->
-                                <a href="/auth/google"><button class="fluid ui google plus button">
-                                        <i class="google plus icon"></i>
-                                        Google Plus
-                                    </button></a>
-                                <br>
+    <div class="uk-card uk-card-default uk-card-body uk-width-expand ">
+        <div class="uk-flex uk-flex-center@m uk-flex-left@l">
+            <h2>LOGO</h2>
+        </div>
+        <div class="uk-flex uk-flex-center@m uk-flex-right@l" >
+            <button class="uk-button uk-button-large uk-button-primary">Download app</button>
+        </div>
+    </div>
 
+
+    <div class="uk-section uk-section-small uk-section-muted" uk-height-viewport>
+        <div class="uk-container uk-container-large">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2 uk-margin" uk-grid>
+                <div style="z-index: 99999" class="uk-card-media-left uk-cover-container uk-child-width-2-3 ">
+                    <img src="images/light.jpg" alt="" uk-cover>
+                    <canvas width="600" height="300"></canvas>
+                </div>
+
+                <div class="uk-card-body uk-cover-container uk-child-width-1-3 ">
+                    <div class="uk-width-expand uk-card uk-card-default uk-card-body uk-box-shadow-large">
+                        <h3 class="uk-card-title uk-text-center">Welcome back!</h3>
+                        <br>
+                        <% if (error && error.length > 0) { %>
+                        <div class="uk-alert-danger" uk-alert>
+                            <a class="uk-alert-close" uk-close></a>
+                            <p>
+                                <%= error %>
                             </p>
-                            <hr class="uk-divider-icon">
-                            <form method="POST" action="/login">
-                                <div class="uk-margin">
-                                    <div class="uk-inline uk-width-1-1">
-                                        <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                        <input name="username" class="uk-input uk-form-large" type="text" placeholder="Enter your Username">
-                                    </div>
-                                </div>
-                                <div class="uk-margin">
-                                    <div class="uk-inline uk-width-1-1">
-                                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                        <input class="uk-input uk-form-large" type="password" name="password"
-                                            placeholder="Enter your password">
-                                    </div>
-                                </div>
-                                <div class="uk-margin">
-                                    <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Login</button>
-                                </div>
-                                <a href="/forgot">Forgot Password</a>
-                            </form>
-                            <h4 class="ui horizontal divider header">
-                                Not registered?
-                            </h4>
+                        </div>
+                        <% } %>
+                        <% if (errorlogin && errorlogin.length > 0) { %>
+                        <div class="uk-alert-danger" uk-alert>
+                            <a class="uk-alert-close" uk-close></a>
+                            <p>
+                                <%= errorlogin %>
+                            </p>
+                        </div>
+                        <% } %>
 
-                            <div class="uk-text-small uk-text-center">
-                                <a href="/signup"><button class="uk-button uk-button-primary uk-button-small uk-width-1-1">Create
-                                        an account</button></a>
+                        <p uk-margin>
+                            <!--<button class="uk-button uk-button-secondary uk-button-small uk-width-1-1" >Large button</button>-->
+                            <a href="/auth/google"><button class="fluid ui google plus button">
+                                    <i class="google plus icon"></i>
+                                    Google Plus
+                                </button></a>
+                            <br>
+
+                        </p>
+                        <hr class="uk-divider-icon">
+                        <form method="POST" action="/login">
+                            <div class="uk-margin">
+                                <div class="uk-inline uk-width-1-1">
+                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                    <input name="username" class="uk-input uk-form-large" type="text" placeholder="Enter your Username">
+                                </div>
                             </div>
+                            <div class="uk-margin">
+                                <div class="uk-inline uk-width-1-1">
+                                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                    <input class="uk-input uk-form-large" type="password" name="password" placeholder="Enter your password">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Login</button>
+                            </div>
+                            <a href="/forgot">Forgot Password</a>
+                        </form>
+                        <h4 class="ui horizontal divider header">
+                            Not registered?
+                        </h4>
+
+                        <div class="uk-text-small uk-text-center">
+                            <a href="/signup"><button class="uk-button uk-button-primary uk-button-small uk-width-1-1">Create
+                                    an account</button></a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
