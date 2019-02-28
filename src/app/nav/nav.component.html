@@ -1,0 +1,189 @@
+<div class="navbarcard">
+    <nav class="uk-navbar-container uk-navbar navh" style="background-color:#3B5902;">
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo navlogo" style="margin-left:555px;" href="#"><img src="assets/img/logo.png" uk-img></a>
+
+      </div>
+      <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+          <li class="profilenav">
+            <div>
+              <div class="profile" uk-toggle="target: #offcanvas-overlay">
+                <span class="headnav  uk-position-left uk-margin-left" style="color:white;">Profile Name</span>
+                <div class="uk-navbar-subtitle uk-position-left uk-margin-left" style="color:white; top:40px;">User name</div>
+              </div>
+            </div>
+          </li>
+          <li class="cashnav">
+            <div>
+              <span class="headnav" style="color:white;">Cash</span>
+              <div class="uk-navbar-subtitle" style="color:white;">0</div>
+            </div>
+          </li>
+          <li class="addnav">
+            <button class="uk-button uk-button-default" href="#modal-sections" uk-toggle><i class="fas fa-plus-circle"></i><span class="headnav add" style="color:white;">ADD CASH</span></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div id="modal-sections" uk-modal>
+    <div class="uk-modal-dialog ug  modaladd">
+      <button class="uk-modal-close-default closebtn" type="button" uk-close></button>
+      <div class="uk-modal-header ug">
+        <h2 class="uk-modal-title">Cash Account</h2>
+      </div>
+      <div class="uk-modal-body" uk-overflow-auto>
+          <ul uk-accordion>
+            <li>
+              <a class="uk-accordion-title" href="#">Balance</a>
+              <div class="uk-accordion-content">
+                <span class="uk-float-left">Deposit</span>
+                <span class="ulc">Withdrawable</span>
+                <span class="uk-float-right">Total</span><br>
+                <span class="uk-float-left">&#x20b9;0</span>
+                <span class="ulcs">&#x20b9;0</span>
+                <span class="uk-float-right">&#x20b9;0</span>
+                <p><button class="uk-button uk-button-danger uk-border-rounded uk-align-center">Log Out</button></p>
+                <span>Your Money is always safe with us. Refer your account statement anytime to track your transactions.</span>
+              </div>
+            </li>
+            <li>
+              <a class="uk-accordion-title" href="#">Account Statement</a>
+              <div class="uk-accordion-content">
+                <div class="uk-overflow-auto uk-height-small">
+                  <table class="uk-table">
+                    <thead>
+                      <tr>
+                        <th>Date Description</th>
+                        <th>Amount</th>
+                        <th>Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="uk-accordion-title" href="#">Withdrawals</a>
+              <div class="uk-accordion-content">
+                <div class="uk-overflow-auto uk-height-small">
+                  <table class="uk-table uk-text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>Id Date</th>
+                        <th>Amount Details</th>
+                        <th>Amount Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="uk-accordion-title" href="#">TDS</a>
+              <div class="uk-accordion-content">
+                <div class="uk-overflow-auto uk-height-small">
+                  <table class="uk-table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>TDS Amount</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                        <td>Table Data</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="uk-accordion-title" href="#">Contact Us</a>
+              <div class="uk-accordion-content">
+                <p>For any concern, please connect to us at 18001202188 between 11am and 10pm.</p>
+                <p>write to us at support@rummyculture.com</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+  <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <h3 class="modalprof">Profile</h3>
+      <ul uk-accordion>
+        <li>
+          <a class="uk-accordion-title" href="#">Personal Details</a>
+          <div class="uk-accordion-content">
+            <a href="#offcanvas-usages" uk-toggle>Mobile</a>
+
+            <div id="offcanvas-usages" uk-offcanvas>
+              <div class="uk-offcanvas-bar navp">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <h3>Title</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.</p>
+
+              </div>
+            </div>
+            <p>Email</p>
+            <p>Display Name</p>
+            <p>Full Name</p>
+          </div>
+        </li>
+        <li>
+          <a class="uk-accordion-title" href="#">KYC Documents</a>
+          <div class="uk-accordion-content">
+            <p>PAN</p>
+            <p>Bank</p>
+            <p>NOTE: Do NOT send any documents over email. Upload them here only.</p>
+            <p>Term & conditions</p>
+          </div>
+        </li>
+        <li>
+          <a class="uk-accordion-title" href="#">Security</a>
+          <div class="uk-accordion-content">
+            <p>Great! You are currently logged in.</p>
+            <p><button class="uk-button uk-button-danger uk-border-rounded uk-align-center">Log Out</button></p>
+          </div>
+        </li>
+        <li>
+          <a class="uk-accordion-title" href="#">Contact us</a>
+          <div class="uk-accordion-content">
+            <p>For any concern, please connect to us at 18001202188 between 11am and 10pm.</p>
+            <p>write to us at support@rummyculture.com</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
