@@ -1,0 +1,1193 @@
+$chat-height: 500px;
+$chat-width: 300px;
+$vanila-button-color: rgba(250, 110, 10, .9);
+$vanila-button-font-family: "Bungee", sans-serif;
+$vanila-button-text-color: rgb(240, 240, 240);
+$vanila-button-disabled-color:  rgba(180, 180, 180, .8);
+$card-height: 153px;
+$card-width: 100px;
+$joker: translate(-50%, 0) rotate(90deg);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-image: url('../img/back1.jpeg');
+  background-size: cover;
+}
+
+.chat {
+  position: fixed;
+  bottom: -($chat-height - 30);
+  right: 10px;
+  height: $chat-height;
+  width: $chat-width;
+  overflow: hidden;
+  z-index: 10;
+
+  &--vanila {
+    transition: all .5s;
+  }
+  &--rolled-out {
+    bottom: 0;
+    transition: all .5s;
+  }
+
+  &-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 30px;
+    float: right;
+    cursor: pointer;
+    user-select: none;
+
+    &--vanila {
+      color: white;
+      font-family: "Open Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 10px 10px 0 0;
+      background-color: rgba(255, 102, 0, .7);
+      transition: all .1s;
+
+      &:hover {
+        background-color: rgba(255, 102, 0, .9);
+        transition: all .1s;
+      }
+      &::before {
+        content: '⇅';
+        position: absolute;
+        top: 3px;
+        right: 2%;
+      }
+      &::after {
+        content: '⇅';
+        position: absolute;
+        top: 3px;
+        right: 42%;
+      }
+    }
+  }
+
+  &-textarea {
+    height: ($chat-height - 100px);
+    width: 100%;
+    overflow: auto;
+    word-wrap: break-word;
+
+    &--vanila {
+      color: black;
+      font-family: "Roboto", monospace;
+      font-size: 14px;
+      font-weight: 300;
+      background-color: rgba(255, 255, 255, .9);
+    }
+    & p {
+      margin: 10px 15px;
+    }
+  }
+
+  &-input-area {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &--vanila input[type="text"] {
+      padding: 3px 10px;
+      outline: 0;
+      border: none;
+      width: 70%;
+      height: 32px;
+      border-radius: 2px;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgb(100, 100, 100);
+      background-color: rgb(230, 230, 230);
+      &::placeholder {
+        color: rgba(30, 30, 30, .5);
+      }
+    }
+    &--vanila input[type="text"]:focus {
+      color: rgb(30, 30, 30);
+      background-color: rgb(240, 240, 240);
+    }
+    &--vanila button {
+      outline: 0;
+      border: none;
+      width: 25%;
+      height: 35px;
+      border-radius: 3px;
+      background-color: desaturate($vanila-button-color, 10%);
+      font-family: $vanila-button-font-family;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 700;
+      color: $vanila-button-text-color;
+      cursor: pointer;
+      transition: .2s all;
+
+      &:hover {
+        background-color: saturate($vanila-button-color, 20%);
+        color: lighten($vanila-button-text-color, 5%);
+        transition: .2s all;
+      }
+      &:active {
+        background-color: darken($vanila-button-color, 5%);
+        transition: .2s all;
+      }
+    }
+  }
+}
+
+.connect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 480px;
+  width: 640px;
+  z-index: 9;
+
+  &--vanila {
+    background-color: rgba(255, 255, 255, .9);
+  }
+
+  &-current-name {
+    position: absolute;
+    top: 7%;
+    left: 10%;
+    color: rgba(20, 20, 20, .9);
+
+    &--vanila {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 600;
+      color: rgba(20, 20, 20, .7);
+    }
+  }
+
+  &-nickname {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &--vanila input[type="text"] {
+      padding: 3px 10px;
+      outline: 0;
+      border: none;
+      width: 60%;
+      height: 32px;
+      border-radius: 3px;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgb(255, 255, 255);
+      background-color: rgba(102, 204, 102, .5);
+      box-shadow: inset 0 0 1px rgba(20, 20, 20, .3);
+      transition: .2s all;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, .9);
+      }
+
+    }
+    &--vanila input[type="text"]:hover {
+      background-color: rgba(102, 204, 102, .6);
+      transition: .2s all;
+    }
+    &--vanila input[type="text"]:focus {
+      color: rgb(255, 255, 255);
+      background-color: rgba(102, 204, 102, .8);
+      transition: .1s all;
+    }
+    &--red input[type="text"] {
+      background-color: rgba(255, 26, 26, .7);
+    }
+    &--vanila button {
+      outline: 0;
+      border: none;
+      width: 20%;
+      height: 32px;
+      border-radius: 3px;
+      background-color: $vanila-button-color;
+      font-family: $vanila-button-font-family;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 700;
+      color: $vanila-button-text-color;
+      cursor: pointer;
+      transition: .2s all;
+
+      &:hover {
+        background-color: saturate($vanila-button-color, 20%);
+        color: lighten($vanila-button-text-color, 5%);
+        box-shadow: 0 0 2px lighten($vanila-button-color, 5%);
+        transition: .2s all;
+      }
+      &:active {
+        background-color: darken($vanila-button-color, 5%);
+        box-shadow: 0 0 1px darken($vanila-button-color, 5%);
+        transition: .2s all;
+      }
+    }
+  }
+
+  &-begin-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 50%;
+    height: 8%;
+    transform: translate(-50%, -50%);
+
+    &--vanila {
+      outline: 0;
+      border: none;
+      border-radius: 3px;
+      background-color: $vanila-button-color;
+      font-family: $vanila-button-font-family;
+      font-size: 23px;
+      line-height: 23px;
+      font-weight: 700;
+      color: $vanila-button-text-color;
+      cursor: pointer;
+      transition: .2s all;
+
+      &:hover {
+        background-color: saturate($vanila-button-color, 20%);
+        color: lighten($vanila-button-text-color, 5%);
+        box-shadow: 0 0 5px lighten($vanila-button-color, 5%);
+        transition: .2s all;
+      }
+      &:active {
+        background-color: darken($vanila-button-color, 5%);
+        box-shadow: 0 0 2px darken($vanila-button-color, 5%);
+        transition: .2s all;
+      }
+    }
+  }
+}
+
+.pending-button {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+  width: 150px;
+  height: 36px;
+  z-index: 8;
+
+  &--vanila {
+    outline: 0;
+    border: none;
+    border-radius: 3px;
+    background-color: $vanila-button-color;
+    font-family: $vanila-button-font-family;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: $vanila-button-text-color;
+    cursor: pointer;
+    transition: .2s all;
+
+    &:hover {
+      background-color: saturate($vanila-button-color, 20%);
+      color: lighten($vanila-button-text-color, 5%);
+      box-shadow: 0 0 3px lighten($vanila-button-color, 5%);
+      transition: .2s all;
+    }
+    &:active {
+      background-color: darken($vanila-button-color, 5%);
+      box-shadow: 0 0 2px darken($vanila-button-color, 5%);
+      transition: .2s all;
+    }
+  }
+
+  &--disabled {
+    background-color: $vanila-button-disabled-color;
+    color: darken($vanila-button-text-color, 10%);
+    box-shadow: none;
+    cursor: no-drop;
+
+    &:hover {
+      background-color: $vanila-button-disabled-color;
+      color: darken($vanila-button-text-color, 10%);
+      box-shadow: none;
+    }
+    &:active {
+      background-color: $vanila-button-disabled-color;
+      color: darken($vanila-button-text-color, 10%);
+      box-shadow: none;
+    }
+  }
+}
+
+.game-buttons {
+  position: absolute;
+  left: 1%;
+  bottom: 1%;
+  width: 500px;
+  height: 36px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 8;
+
+  &--vanila {
+    width: 120px;
+    height: 100%;
+    outline: 0;
+    border: none;
+    border-radius: 3px;
+    background-color: desaturate($vanila-button-color, 10%);
+    font-family: $vanila-button-font-family;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: $vanila-button-text-color;
+    cursor: pointer;
+    transition: .2s all;
+
+    &:hover {
+      background-color: saturate($vanila-button-color, 20%);
+      color: lighten($vanila-button-text-color, 5%);
+      box-shadow: 0 0 3px lighten($vanila-button-color, 5%);
+      transition: .2s all;
+    }
+    &:active {
+      background-color: darken($vanila-button-color, 5%);
+      box-shadow: 0 0 2px darken($vanila-button-color, 5%);
+      transition: .2s all;
+    }
+  }
+  &--disabled {
+    background-color: $vanila-button-disabled-color;
+    color: darken($vanila-button-text-color, 10%);
+    box-shadow: none;
+    cursor: no-drop;
+
+    &:hover {
+      background-color: $vanila-button-disabled-color;
+      color: darken($vanila-button-text-color, 10%);
+      box-shadow: none;
+    }
+    &:active {
+      background-color: $vanila-button-disabled-color;
+      color: darken($vanila-button-text-color, 10%);
+      box-shadow: none;
+    }
+  }
+}
+
+.error-pop-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 50px;
+  z-index: 10;
+
+  &--vanila {
+    border-radius: 8px;
+    background-color: desaturate(rgba(255, 26, 26, .9), 30%);
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    transition: .2s all;
+  }
+}
+
+.success-pop-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 50px;
+  z-index: 10;
+
+  &--vanila {
+    border-radius: 8px;
+    background-color: desaturate(rgba(26, 204, 26, .9), 30%);
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    transition: .2s all;
+  }
+}
+
+.deck-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $card-height + 14px;
+  width: (2 * $card-width) + 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 7;
+  transform: translate(-50%, -50%);
+
+  & .deck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: $card-width + 14px;
+	position: relative;
+    border: solid 2px white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .1s all;
+
+    & .joker {
+	  position: relative;
+      transform: $joker;
+    }
+	& .card-back {
+	  position: absolute;
+      top: 5px;
+	  left: 5px;
+    }
+    &:hover {
+      box-shadow: 0 0 4px white,
+                  inset 0 0 4px white;
+      transition: .1s all;
+    }
+    &:active {
+      box-shadow: 0 0 3px white;
+    }
+  }
+  & .pile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: $card-width + 14px;
+	position: relative;
+    border: solid 2px white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .1s all;
+
+    &:hover {
+      box-shadow: 0 0 4px white,
+                  inset 0 0 4px white;
+      transition: .1s all;
+    }
+    &:active {
+      box-shadow: 0 0 3px white;
+    }
+    & .card-box {
+      position: absolute;
+	  top: 5px;
+	  left: 5px;
+      transform-origin: center bottom;
+      animation: flip-front-card .3s forwards;
+    }
+    & .card-back {
+      animation: none;
+      transform: rotateY(180deg);
+    }
+    & .card-front {
+      box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+      transform: rotateY(360deg);
+    }
+  }
+}
+
+.show-declared {
+  position: fixed;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $card-height + 14px;
+  width: $card-width + 14px;
+  border: solid 2px white;
+  border-radius: 5px;
+  transition: .1s all;
+
+  &:hover {
+    box-shadow: 0 0 1px white,
+                inset 0 0 1px white;
+    transition: .1s all;
+  }
+
+  & .card-box {
+    position: absolute;
+    transform-origin: center bottom;
+    animation: flip-front-card .3s forwards;
+  }
+  & .card-back {
+    animation: none;
+    transform: rotateY(180deg) !important;
+  }
+  & .card-front {
+    box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+    transform: rotateY(360deg) !important;
+  }
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  height: 153px;
+  width: 100%;
+  overflow: visible;
+  z-index: 7;
+  &--vanila {
+    transition: .5s all;
+  }
+  &:hover {
+    z-index: 9;
+  }
+  &-group {
+    flex: 0 1 auto;
+    min-width: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 10px;
+    padding-right: $card-width;
+
+    & .card-box {
+      &:hover {
+        transform: translate(0, -10px);
+        transition: .2s all;
+      }
+      &--selected {
+        transform: translate(0, -15px);
+        transition: .2s all;
+        & .card-front {
+          box-shadow: 0 0 8px black;
+        }
+      }
+    }
+    & .card-box--subtle-animation .card-back {
+      animation: rotate-back-card .1s forwards;
+    }
+    & .card-box--subtle-animation .card-front {
+      animation: rotate-front-card .1s forwards;
+    }
+    & .card-back {
+      animation: rotate-back-card .5s .2s forwards;
+    }
+    & .card-front {
+      box-shadow: 0 0 3px black;
+      animation: rotate-front-card .5s .2s forwards;
+      &:hover {
+        box-shadow: 0 0 8px black;
+      }
+    }
+  }
+}
+
+.toss {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 480px;
+  width: 640px;
+  border-radius: 5px;
+  z-index: 9;
+
+  &--vanila {
+    background-color: rgba(255, 255, 255, .6);
+    transition: .3 all;
+  }
+
+  &-label {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: rgb(75, 75, 75);
+    text-shadow: 1px 1px rgba(255, 255, 255, .8);
+    font-size: 25px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+  }
+
+  &-your-card {
+    height: $card-height;
+    width: $card-width;
+  }
+
+  &-other-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: $card-height;
+    width: 100%;
+  }
+
+  & .card-box .card-label {
+    position: relative;
+    text-align: center;
+    height: 20px;
+    width: $card-width;
+    color: rgba(25, 25, 25, .9);
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  & .card-back {
+    animation: rotate-back-card .5s .2s forwards;
+  }
+  & .card-front {
+    animation: rotate-front-card .5s .2s forwards;
+  }
+}
+
+.player-container {
+  width: 120px;
+  height: 120px;
+  border: solid 2px white;
+  z-index: 5;
+  transition: .1s all;
+
+  &:hover {
+    box-shadow: 0 0 5px white,
+                inset 0 0 5px white;
+    z-index: 8;
+  }
+
+  &-icon {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &:hover .player-container-icon-score{
+      opacity: 1;
+      transition: .1s all;
+    }
+    &:hover .player-container-icon-name{
+      opacity: 0;
+      transition: .1s all;
+    }
+
+    &-score {
+      height: 25px;
+      width: 100%;
+      padding: 5px;
+      position: absolute;
+      bottom: 0;
+      border-radius: 0 0 3px 3px;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      transform: translate(0, 100%);
+      background-color: rgba(255, 255, 255, .9);
+      opacity: 0;
+      transition: .1s all;
+    }
+    &-name {
+      height: 25px;
+      width: 100%;
+      padding: 5px;
+      position: absolute;
+      bottom: 0;
+      border-radius: 0 0 3px 3px;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      transform: translate(0, 100%);
+      background-color: rgba(255, 255, 255, .9);
+      opacity: 1;
+      transition: .1s all;
+    }
+    &-timer {
+      height: 25px;
+      width: 50%;
+      padding: 5px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border-radius: 3px 3px 0 0;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      opacity: 0;
+      transform: translate(-50%, -100%);
+      background-color: rgba(255, 255, 255, .9);
+      transition: .1s all;
+    }
+  }
+
+  &--connected .player-container-icon {
+    background-color: rgba(0, 179, 0, .9);
+  }
+
+  &--move .player-container-icon {
+    background-color: $vanila-button-color;
+
+    & .player-container-icon-timer {
+      opacity: 1;
+      transition: .1s all;
+    }
+  }
+
+  &--disconnected {
+    border: solid 2px rgba(204, 0, 0, .9);
+
+      &:hover {
+        box-shadow: 0 0 5px rgba(204, 0, 0, .9),
+                    inset 0 0 5px rgba(204, 0, 0, .9);
+      }
+  }
+
+  &--disconnected .player-container-icon {
+    background-color: rgba(204, 0, 0, .9);
+  }
+
+  &--dropped .player-container-icon{
+    background-color: rgba(179, 179, 179, .9);
+  }
+}
+
+.show-container {
+  height: $card-height * 2 + 180px;
+  width: $card-width * 6 + 70px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  padding: 10px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+
+  &--vanila {
+    border-radius: 5px;
+    background-color: rgba(230, 230, 230, .9);
+  }
+
+  &-set {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    overflow: hidden;
+    height: $card-height + 30px;
+    width: $card-width * 3 + 10px;
+
+    &-add {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      outline: 0;
+      border: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 2px;
+      background-color: desaturate($vanila-button-color, 10%);
+      font-family: $vanila-button-font-family;
+      font-size: 23px;
+      font-weight: 700;
+      color: $vanila-button-text-color;
+      cursor: pointer;
+      z-index: 5;
+      transition: .2s all;
+
+      & p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        background-color: saturate($vanila-button-color, 20%);
+        color: lighten($vanila-button-text-color, 5%);
+        transition: .2s all;
+      }
+      &:active {
+        background-color: darken($vanila-button-color, 5%);
+        transition: .2s all;
+      }
+    }
+
+    &-remove {
+      position: absolute;
+      bottom: 5px;
+      right: 35px;
+      outline: 0;
+      border: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 2px;
+      background-color: desaturate($vanila-button-color, 10%);
+      font-family: $vanila-button-font-family;
+      font-size: 23px;
+      font-weight: 700;
+      color: $vanila-button-text-color;
+      cursor: pointer;
+      z-index: 5;
+      transition: .2s all;
+
+      & p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        background-color: saturate($vanila-button-color, 20%);
+        color: lighten($vanila-button-text-color, 5%);
+        transition: .2s all;
+      }
+      &:active {
+        background-color: darken($vanila-button-color, 5%);
+        transition: .2s all;
+      }
+    }
+
+    & .card-back {
+      animation: none;
+      transform: rotateY(180deg) !important;
+      transition: .2s all;
+    }
+    & .card-front {
+      box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+      animation: none;
+      transform: rotateY(360deg) !important;
+      transition: .2s all;
+
+      &:hover {
+        box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        transition: .2s all;
+      }
+    }
+    & .card-box--selected {
+      transform: translate(0, -10px);
+      transition: .2s all;
+      & .card-front {
+        box-shadow: 0 0 8px black;
+      }
+    }
+  }
+
+  &--vanila &-set{
+    border-radius: 3px;
+    border: solid 1px white;
+    background-color: rgba(245, 245, 245, .9);
+  }
+
+  &-send {
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+    outline: 0;
+    border: none;
+    width: 20%;
+    height: 30px;
+    border-radius: 3px;
+    background-color: desaturate($vanila-button-color, 10%);
+    font-family: $vanila-button-font-family;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 700;
+    color: $vanila-button-text-color;
+    cursor: pointer;
+    transition: .2s all;
+
+    &:hover {
+      background-color: saturate($vanila-button-color, 20%);
+      color: lighten($vanila-button-text-color, 5%);
+      transition: .2s all;
+    }
+    &:active {
+      background-color: darken($vanila-button-color, 5%);
+      transition: .2s all;
+    }
+  }
+  &-cancel {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    outline: 0;
+    border: none;
+    width: 20%;
+    height: 30px;
+    border-radius: 3px;
+    background-color: desaturate($vanila-button-color, 10%);
+    font-family: $vanila-button-font-family;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 700;
+    color: $vanila-button-text-color;
+    cursor: pointer;
+    transition: .2s all;
+
+    &:hover {
+      background-color: saturate($vanila-button-color, 20%);
+      color: lighten($vanila-button-text-color, 5%);
+      transition: .2s all;
+    }
+    &:active {
+      background-color: darken($vanila-button-color, 5%);
+      transition: .2s all;
+    }
+  }
+}
+
+.global-timer {
+  height: 35px;
+  width: 80px;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  border-radius: 0 0 5px 5px;
+  font-size: 23px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  background-color: $vanila-button-color;
+  transition: .1s all;
+
+  &--yellow {
+    background-color: rgb(255, 204, 0);
+    transition: .1s all;
+  }
+  &--red {
+    background-color: rgb(255, 51, 0);
+    transition: .1s all;
+  }
+}
+
+.global-scores {
+  height: 30px;
+  width: 150px;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  border-radius: 0 0 5px 5px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  background-color: $vanila-button-color;
+  transition: .1s all;
+}
+
+.popup-show-container {
+  position: fixed;
+  top: 10%;
+  width: 100%;
+  min-height: 100px;
+  max-height: 75%;
+  overflow: auto;
+  padding: 10px 0;
+  background-color: rgba(190, 190, 190, .8);
+  z-index: 9;
+
+  &-player {
+    flex: 0 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: ($card-height / 2) + 20px;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+    &-label {
+      position: absolute;
+      top: -26px;
+      left: 20px;
+      width: 100px;
+      font-size: 20px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .9);
+      text-shadow: 1px 1px rgba(40, 40, 40, .9);
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    &-score {
+      position: absolute;
+      top: -25px;
+      left: 125px;
+      font-size: 20px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      color: rgba(40, 40, 40, .9);
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    &-set {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      min-width: 0;
+      flex: 0 1 ($card-width * 2) - 10px;
+      transform: scale(.6);
+
+      & .card-back {
+        animation: none;
+        transform: rotateY(180deg) !important;
+        transition: .2s all;
+      }
+      & .card-front {
+        box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+        animation: none;
+        transform: rotateY(360deg) !important;
+        transition: .2s all;
+
+        &:hover {
+          box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+          transition: .2s all;
+        }
+      }
+    }
+  }
+}
+
+#west {
+  position: fixed;
+  top: 30%;
+  left: 10px;
+}
+#north-west {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+}
+#north {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#north-east {
+  position: fixed;
+  top: 10%;
+  right: 20%;
+}
+#east {
+  position: fixed;
+  top: 30%;
+  right: 10px;
+}
+
+.visibility-none {
+  opacity: 0;
+  transition: .2s all;
+}
+.display-none {
+  display: none;
+}
+.slide-out-bottom {
+  position: absolute;
+  bottom: 0;
+  transform: translate(0, 120%);
+  transition: .2s all;
+}
+.slide-out-up {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -120%);
+  transition: .2s all;
+}
+
+@media (min-width: 1200px) {
+  .card-container-group {
+    padding-right: $card-width - 20px;
+  }
+}
+
+@keyframes rotate-back-card {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(180deg);
+    }
+}
+
+@keyframes rotate-front-card {
+    from {
+      transform: rotateY(180deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}
+
+
+@keyframes flip-front-card {
+    from {
+      transform: rotateX(270deg);
+    }
+    to {
+      transform: rotateX(360deg);
+    }
+}

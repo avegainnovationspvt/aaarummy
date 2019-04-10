@@ -1,0 +1,278 @@
+$card-height: 153px;
+$card-width: 100px;
+$pos-margin: 1.5px;
+
+@mixin clubs() {
+  background-image: url('../img/clubs-transparent.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+@mixin diamonds() {
+  background-image: url('../img/diamonds-transparent.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+@mixin hearts() {
+  background-image: url('../img/hearts-transparent.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+@mixin spades() {
+  background-image: url('../img/spades-transparent.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.card {
+  &-box {
+    position: static;
+    height: $card-height;
+    width: $card-width;
+    z-index: 1;
+    & .card-back {
+      backface-visibility: hidden;
+    }
+    & .card-front {
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+    }
+    & .card-blank {
+      background-color: transparent;
+      backface-visibility: hidden;
+    }
+  }
+  &-back {
+    position: absolute;
+    height: $card-height;
+    width: $card-width;
+    border-radius: 5px;
+    background-image: url('../img/card-back.png');
+    background-size: contain;
+    transition: all .3s;
+  }
+  &-front {
+    position: absolute;
+    height: $card-height;
+    width: $card-width;
+    border-radius: 5px;
+    border: 10px gray;
+    background-color: white;
+    background-size: contain;
+    transition: all .3s;
+  }
+  &--c-ace {
+    @include clubs();
+  }
+  &--c-2 {
+    @include clubs();
+    background-position: -($card-width - $pos-margin) 0;
+  }
+  &--c-3 {
+    @include clubs();
+    background-position: -(2 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-4 {
+    @include clubs();
+    background-position: -(3 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-5 {
+    @include clubs();
+    background-position: -(4 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-6 {
+    @include clubs();
+    background-position: -(5 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-7 {
+    @include clubs();
+    background-position: -(6 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-8 {
+    @include clubs();
+    background-position: -(7 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-9 {
+    @include clubs();
+    background-position: -(8 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-10 {
+    @include clubs();
+    background-position: -(9 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-jack {
+    @include clubs();
+    background-position: -(10 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-queen {
+    @include clubs();
+    background-position: -(11 * ($card-width - $pos-margin)) 0;
+  }
+  &--c-king {
+    @include clubs();
+    background-position: -(12 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-ace {
+    @include diamonds();
+  }
+  &--d-2 {
+    @include diamonds();
+    background-position: -($card-width - $pos-margin) 0;
+  }
+  &--d-3 {
+    @include diamonds();
+    background-position: -(2 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-4 {
+    @include diamonds();
+    background-position: -(3 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-5 {
+    @include diamonds();
+    background-position: -(4 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-6 {
+    @include diamonds();
+    background-position: -(5 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-7 {
+    @include diamonds();
+    background-position: -(6 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-8 {
+    @include diamonds();
+    background-position: -(7 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-9 {
+    @include diamonds();
+    background-position: -(8 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-10 {
+    @include diamonds();
+    background-position: -(9 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-jack {
+    @include diamonds();
+    background-position: -(10 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-queen {
+    @include diamonds();
+    background-position: -(11 * ($card-width - $pos-margin)) 0;
+  }
+  &--d-king {
+    @include diamonds();
+    background-position: -(12 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-ace {
+    @include hearts();
+  }
+  &--h-2 {
+    @include hearts();
+    background-position: -($card-width - $pos-margin) 0;
+  }
+  &--h-3 {
+    @include hearts();
+    background-position: -(2 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-4 {
+    @include hearts();
+    background-position: -(3 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-5 {
+    @include hearts();
+    background-position: -(4 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-6 {
+    @include hearts();
+    background-position: -(5 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-7 {
+    @include hearts();
+    background-position: -(6 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-8 {
+    @include hearts();
+    background-position: -(7 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-9 {
+    @include hearts();
+    background-position: -(8 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-10 {
+    @include hearts();
+    background-position: -(9 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-jack {
+    @include hearts();
+    background-position: -(10 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-queen {
+    @include hearts();
+    background-position: -(11 * ($card-width - $pos-margin)) 0;
+  }
+  &--h-king {
+    @include hearts();
+    background-position: -(12 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-ace {
+    @include spades();
+  }
+  &--s-2 {
+    @include spades();
+    background-position: -($card-width - $pos-margin) 0;
+  }
+  &--s-3 {
+    @include spades();
+    background-position: -(2 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-4 {
+    @include spades();
+    background-position: -(3 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-5 {
+    @include spades();
+    background-position: -(4 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-6 {
+    @include spades();
+    background-position: -(5 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-7 {
+    @include spades();
+    background-position: -(6 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-8 {
+    @include spades();
+    background-position: -(7 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-9 {
+    @include spades();
+    background-position: -(8 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-10 {
+    @include spades();
+    background-position: -(9 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-jack {
+    @include spades();
+    background-position: -(10 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-queen {
+    @include spades();
+    background-position: -(11 * ($card-width - $pos-margin)) 0;
+  }
+  &--s-king {
+    @include spades();
+    background-position: -(12 * ($card-width - $pos-margin)) 0;
+  }
+  &--black-joker {
+    background-image: url('../img/jokers.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+  &--red-joker {
+    background-image: url('../img/jokers.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: -$card-width 0;
+  }
+}
