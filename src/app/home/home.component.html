@@ -1,3 +1,66 @@
+<nav class="uk-navbar-container uk-margin nbar" uk-navbar>
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo log" href="#"><img src="assets/img/logo.png" alt="image" /></a>
+    </div>
+
+    <div class="uk-navbar-right">
+       <ul class="uk-navbar-nav">
+           <li>
+              <a class="uk-button uk-button-default fstbtn" href="#">Download Android App</a>
+              <a class="uk-button uk-button-default sndbtn" href="#modal-sections" uk-toggle><span class="lck" uk-icon="icon: lock;"></span>Login
+                  <div id="modal-sections" uk-modal>
+                     <div class="uk-modal-dialog">
+                        <!--<button class="uk-modal-close-default" type="button" uk-close></button>-->
+                        <ul class="uk-modal-header" uk-switcher="animation: uk-animation-fade; toggle: > *">
+                            <button class="uk-button uk-button-default btn1" type="button">Register</button>
+                            <button class="uk-button uk-button-default btn2" type="button">Login</button>
+                        </ul>
+                        <ul class="uk-modal-body uk-switcher uk-margin">
+                          <li>
+                            <form>
+                              <fieldset class="uk-fieldset">
+                                <div class="uk-margin">
+                                  <input class="uk-input ipt1" type="email" placeholder="Your email id">
+                                  <input class="uk-input ipt2" type="number" placeholder="Your mobile number">
+                                  <input class="uk-input ipt3" type="password" placeholder="Secure password">
+                                  <p class="p1">By registering you are agreeing to our Terms & Conditions</p>
+                                  <a class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom btn3" href="#"><span class="lck2" uk-icon="lock"></span>Register and Play</a>
+                                  <p class="p2">Or login in one click</p>
+                                  <p uk-margin>
+                                    <a class="uk-button uk-button-default lnk1" href="#"><span class="fb" uk-icon="facebook"></span>Facebook</a>
+                                    <a class="uk-button uk-button-default lnk2" href="#"><span class="gl" uk-icon="google"></span>Google</a>
+                                  </p>
+                                </div>
+                              </fieldset>
+                            </form>
+                          </li>
+                          <li>
+                            <form>
+                              <fieldset class="uk-fieldset">
+                                <div class="uk-margin">
+                                  <input class="uk-input ipt4" type="text" placeholder="Your email id/mobile">
+                                  <input class="uk-input ipt5" type="password" placeholder="Secure password">
+                                  <a class="forgot" routerLink="/forget-password">Forgot Password</a>
+                                  <p class="p3">By registering you are agreeing to our Terms & Conditions</p>
+                                  <a class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom btn4" href=""><span class="lck1" uk-icon="lock"></span>Login</a>
+                                  <p class="p4">Or login in one click</p>
+                                  <p uk-margin>
+                                    <a class="uk-button uk-button-default lnk3" href="#"><span class="fb" uk-icon="facebook"></span>Facebook</a>
+                                    <a class="uk-button uk-button-default lnk4" href="#"><span class="gl" uk-icon="google"></span>Google</a>
+                                  </p>
+                                </div>
+                              </fieldset>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                 </div>
+              </a>
+           </li>
+       </ul>
+   </div>
+</nav>
+
 <div uk-grid>
   <div class="uk-width-auto">
     <div class="imgh" uk-switcher="animation: uk-animation-fade; toggle: > *">
@@ -39,6 +102,7 @@
             </div>
           </div>
         </form>
+        <br>
         <button class="uk-button uk-button-primary uk-width-1-1 uk-border-rounded"><i class="fas fa-lock"></i> Register & Play</button>
       </div>
     </div>

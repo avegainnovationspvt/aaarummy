@@ -9,6 +9,7 @@ import { BtndownbannerComponent } from './btndownbanner/btndownbanner.component'
 import { MiddlepartComponent } from './middlepart/middlepart.component';
 import { GamemidComponent } from './gamemid/gamemid.component';
 import { HomeComponent } from './home/home.component';
+import { ForpasComponent } from './forpas/forpas.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     BtndownbannerComponent,
     MiddlepartComponent,
     GamemidComponent,
-    HomeComponent
+    HomeComponent,
+    ForpasComponent
   ],
   imports: [
     BrowserModule,
