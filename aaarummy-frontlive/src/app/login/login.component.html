@@ -1,0 +1,27 @@
+<div class="login">
+<div class="uk-card uk-card-default uk-width-1-2@m uk-width-1-1@s log">
+  <ul class="uk-modal-header" uk-switcher="animation: uk-animation-fade; toggle: > *">
+    <button class="uk-button uk-button-default btn2" type="button">Login</button>
+  </ul>
+  <ul class="uk-modal-body uk-switcher uk-margin">
+    <li>
+      <form (submit)="onLoginSubmit()">
+        <fieldset class="uk-fieldset">
+          <div class="uk-margin">
+            <input class="uk-input ipt4" type="text" [(ngModel)]="username" name="username" placeholder="Your username/mobile">
+            <input class="uk-input ipt5" type="password" [(ngModel)]="password" name="password" placeholder="Secure password">
+            <a class="forgot" routerLink="/forgot-password">Forgot Password</a>
+            <p class="p3">By registering you are agreeing to our Terms & Conditions</p>
+            <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom btn4" type="submit"><span class="lck1" uk-icon="lock"></span>Login</button>
+            <p class="p4">Or login in one click</p>
+            <p uk-margin>
+              <a class="uk-button uk-button-default lnk3" href="#"><span class="fb" uk-icon="facebook"></span>Facebook</a>
+              <a class="uk-button uk-button-default lnk4" href="#"><span class="gl" uk-icon="google"></span>Google</a>
+            </p>
+          </div>
+        </fieldset>
+      </form>
+    </li>
+  </ul>
+</div>
+</div>
