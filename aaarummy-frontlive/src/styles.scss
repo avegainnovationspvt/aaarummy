@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../node_modules/uikit/src/scss/uikit-theme.scss";
+
+.bad{
+  background-image: url("assets/img/cardback.jpg");
+  background-size: cover;
+}
+.backcard1{
+  background-image: url("assets/img/cardback.jpg");
+  background-size: cover;
+}
+
+.btng{
+  margin-left:5vw;
+}
+.banner{
+  background-image:url("assets/img/banner.png");
+  height: 13vh;
+}
+.banner{
+  color: white;
+  border-radius: 10px;
+  margin-left: 20px;
+  font-size: 30px;
+  width:79vw;
+  margin-bottom: 10px;
+  margin-top:6%;
+}
+
+.backcard2{
+  background-image: url('assets/img/table.png');
+  background-size: cover;
+  margin-left:19.5%;
+  border: 1px solid lime;
+  position:absolute;
+  top:15%;
+  width:78vw;
+  height:68vh;
+}
